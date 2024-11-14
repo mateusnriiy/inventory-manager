@@ -7,17 +7,20 @@ Bem-vindo ao **Inventory Manager**! Este repositório contém o código-fonte de
 O **InventoryManager** oferece as seguintes funcionalidades principais:
 
 1. **Cadastro de Produtos**:
-   - Adicione novos produtos com detalhes como nome, descrição, categoria, preço e quantidade.
-   - Atualize ou remova produtos do estoque.
+   - Realize o cadastro dos novos produtos com detalhes como ID, nome, preço e quantidade.
 
 2. **Listagem dos produtos**:
+   - Realize a listagem de todos os produtudos cadastrados com detalhes como ID, nome, preço e quantidade.
  
-3. **Edição dos Produtos**:
-
-4. **Remoção dos Produtos**:
-
-5. **Salvar em arquivo .TXT**:
-
+4. **Edição dos Produtos**:
+   - Realize a edição dos produtos cadastrados buscando pelo seu ID, permite editar o nome, preço e quantidade.
+     
+5. **Remoção dos Produtos**:
+   - Realize  removação dos produtos cadastrados buscando pelo seu ID.
+     
+6. **Salvar em arquivo .TXT**:
+   - Salve os dados do sistema um arquivo .TXT com detalhes como ID, nome, preço e quantidade.
+     
 ## Tecnologias Utilizadas
 
 - **Backend**: C (para lógica e controle de dados).
