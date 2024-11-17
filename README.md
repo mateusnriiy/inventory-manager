@@ -2,7 +2,7 @@
 
 Bem-vindo ao **Inventory Manager**!  
 
-Este repositório contém o código-fonte de um sistema de gerenciamento de estoque de produtos, desenvolvido em **C puro**. O projeto também utiliza **Node.js** para criar uma API que interliga o executável em C ao **frontend**, desenvolvido com o framework **React**.  
+Este repositório contém o código-fonte de um sistema de gerenciamento de estoque de produtos, desenvolvido em **C puro**. O projeto também utiliza uma API que interliga o executável em C à uma interface.  
 
 ## Objetivo
 
@@ -40,18 +40,23 @@ O **InventoryManager** oferece as seguintes funcionalidades principais:
 
 - **Backend**: Código em C responsável pelas operações principais do sistema.
 - **API**: Desenvolvida em Node.js para interligar o backend ao frontend.
-- **Frontend**: Interface desenvolvida com React, permitindo uma experiência intuitiva para o usuário.
+- **Frontend**: Interface desenvolvida com HTML, CSS e JavaScrpit, permitindo uma experiência intuitiva para o usuário.
 - **Banco de Dados**: Arquivos em txt ou estruturados em C para armazenamento de produtos e transações.
 
 ## Estrutura do Projeto
 
 ```
 ├───inventory-maganer
-    └───backend
-        └───program
-            ├─── funcoes.c
-            ├─── funcoes.h
-            └─── main.c
+    ├───backend
+    |   ├─── api.js
+    |   └───program
+    |       ├─── funcoes.c
+    |       ├─── funcoes.h
+    |       └─── main.c
+    └───frontend
+        ├─── index.html
+        ├─── style.css
+        └─── index.js
 ```
 - `main.c`: Arquivo principal que inicializa o sistema.
 - `funcoes.c` e `funcoes.h`: biblioteca para cadastrar, listar, editar, remover e salvar em um arquivo os produtos do estoque.
