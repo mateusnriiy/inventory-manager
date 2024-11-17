@@ -43,6 +43,19 @@ O **InventoryManager** oferece as seguintes funcionalidades principais:
 - **Frontend**: Interface desenvolvida com React, permitindo uma experiência intuitiva para o usuário.
 - **Banco de Dados**: Arquivos em txt ou estruturados em C para armazenamento de produtos e transações.
 
+## Estrutura do Projeto
+
+```
+├───inventory-maganer
+    └───backend
+        └───program
+            ├─── funcoes.c
+            ├─── funcoes.h
+            └─── main.c
+```
+- `main.c`: Arquivo principal que inicializa o sistema.
+- `funcoes.c` e `funcoes.h`: biblioteca para cadastrar, listar, editar, remover e salvar em um arquivo os produtos do estoque.
+
 ## Pré-requisitos
 
 Para rodar o sistema localmente, você precisará de:
@@ -77,19 +90,6 @@ Para rodar o sistema localmente, você precisará de:
     ```
 
 5. Abra o arquivo `index.html` em um navegador para acessar a interface gráfica.
-
-## Estrutura do Projeto
-
-```
-├───inventory-maganer
-    └───backend
-        └───program
-            ├─── funcoes.c
-            ├─── funcoes.h
-            └─── main.c
-```
-- `main.c`: Arquivo principal que inicializa o sistema.
-- `funcoes.c` e `funcoes.h`: biblioteca para cadastrar, listar, editar, remover e salvar em um arquivo os produtos do estoque.
 
 
 ## Contribuição
