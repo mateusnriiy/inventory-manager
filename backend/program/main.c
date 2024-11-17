@@ -4,7 +4,7 @@
 // Função principal
 int main() {
     Nodo *cabeca = NULL; // Inicializa a cabeça da lista como vazia
-    int opcao, id;
+    int opcao, id = 1;
     Produto produto;
 
     // Carrega os produtos do arquivo de texto ao iniciar o programa
@@ -23,8 +23,7 @@ int main() {
 
         switch (opcao) {
             case 1:
-                printf("Digite o ID: ");
-                scanf("%d", &produto.id);
+                produto.id = id++;
                 printf("Digite o nome: ");
                 scanf(" %[^\n]s", produto.nome);
                 printf("Digite o preço: ");
