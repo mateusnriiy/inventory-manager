@@ -47,6 +47,7 @@ O **InventoryManager** oferece as seguintes funcionalidades principais:
 
 ```
 ├───inventory-maganer
+    ├───.vscode
     ├───backend
     |   ├─── api.js
     |   └───program
