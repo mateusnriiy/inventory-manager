@@ -2,11 +2,11 @@
 
 Bem-vindo ao **Inventory Manager**!  
 
-Este repositório contém o código-fonte de um sistema de gerenciamento de estoque de produtos, desenvolvido em **C puro**. O projeto também utiliza uma API que interliga o executável em C à uma interface.  
+Este repositório contém o código-fonte de um sistema de gerenciamento de estoque de produtos, desenvolvido em **C puro**. O projeto também utiliza uma API para interligar o executável em C a uma interface web.
 
 ## Objetivo
 
-O sistema foi desenvolvido como parte da avaliação da terceira unidade da disciplina **Técnicas de Programação**, com o objetivo de consolidar e aplicar os seguintes conhecimentos:
+Este sistema foi desenvolvido como parte da avaliação da terceira unidade da disciplina **Técnicas de Programação**, com o objetivo de consolidar e aplicar os seguintes conhecimentos:
 - Estruturas de dados (listas encadeadas),
 - Funções,
 - Structs,
@@ -15,59 +15,67 @@ O sistema foi desenvolvido como parte da avaliação da terceira unidade da disc
 
 ## Diferenciais do Projeto
 
-Buscando ir além dos requisitos básicos da disciplina, optamos por incorporar tecnologias modernas como Node.js e React. Isso resultou em um sistema mais robusto e funcional, unindo conceitos fundamentais de programação em C a ferramentas atuais para o desenvolvimento de soluções completas.
+O **Inventory Manager** vai além dos requisitos básicos da disciplina ao incorporar tecnologias modernas, como **Node.js** e **HTML, CSS e JavaScript**, resultando em um sistema robusto que combina conceitos fundamentais de programação em C com ferramentas atuais para o desenvolvimento de soluções completas.
 
 ## Funcionalidades
 
-O **InventoryManager** oferece as seguintes funcionalidades principais:
+O sistema oferece as seguintes funcionalidades:
 
-1. **Cadastro de Produtos**:
-   - Realize o cadastro dos novos produtos com detalhes como nome, preço e quantidade.
+1. **Cadastro de Produtos**  
+   Permite o registro de produtos com informações como nome, preço e quantidade.
 
-2. **Listagem dos produtos**:
-   - Realize a listagem de todos os produtudos cadastrados com detalhes como ID, nome, preço e quantidade.
- 
-4. **Edição dos Produtos**:
-   - Realize a edição dos produtos cadastrados buscando pelo seu ID, permite editar o nome, preço e quantidade.
-     
-5. **Remoção dos Produtos**:
-   - Realize removação dos produtos cadastrados buscando pelo seu ID.
-     
-6. **Salvar em arquivo .TXT**:
-   - Salve os dados do sistema um arquivo .TXT utilizando-o como banco de dados.
-     
+2. **Listagem de Produtos**  
+   Exibe todos os produtos cadastrados com detalhes como ID, nome, preço e quantidade.
+
+3. **Edição de Produtos**  
+   Permite a edição de dados de produtos existentes, buscando pelo ID.
+
+4. **Remoção de Produtos**  
+   Remove produtos do sistema com base no ID.
+
+5. **Salvar em Arquivo .TXT**  
+   Armazena os dados em um arquivo `.txt`, que atua como banco de dados simples.
+
 ## Tecnologias Utilizadas
 
-- **Backend**: Código em C responsável pelas operações principais do sistema.
-- **API**: Desenvolvida em Node.js para interligar o backend ao frontend.
-- **Frontend**: Interface desenvolvida com HTML, CSS e JavaScrpit, permitindo uma experiência intuitiva para o usuário.
-- **Banco de Dados**: Arquivos em txt ou estruturados em C para armazenamento de produtos e transações.
+- **Backend**: Código em C para as operações principais.
+- **API**: Desenvolvida em Node.js para conectar o backend ao frontend.
+- **Frontend**: Interface desenvolvida com HTML, CSS e JavaScript.
+- **Banco de Dados**: Arquivos `.txt` gerenciados pelo código em C.
 
 ## Estrutura do Projeto
 
 ```
-├───inventory-maganer
-    ├───.vscode
-    ├───backend
-    |   ├─── api.js
-    |   └───program
-    |       ├─── funcoes.c
-    |       ├─── funcoes.h
-    |       └─── main.c
-    └───frontend
-        ├─── index.html
-        ├─── style.css
-        └─── index.js
+inventory-manager/
+├─── .vscode/
+├─── backend/
+│    ├── api.js
+│    └── program/
+│         ├── funcoes.c
+│         ├── funcoes.h
+│         └── main.c
+└─── frontend/
+     ├── index.html
+     ├── style.css
+     └── index.js
 ```
-- `main.c`: Arquivo principal que inicializa o sistema.
-- `funcoes.c` e `funcoes.h`: biblioteca para cadastrar, listar, editar, remover e salvar em um arquivo os produtos do estoque.
+
+### Descrição dos Arquivos
+
+- **`api.js`**: Conecta o executável em C ao Node.js, permitindo a interação com a interface web.  
+- **`main.c`**: Arquivo principal que inicializa o sistema.  
+- **`funcoes.c`** e **`funcoes.h`**: Biblioteca para operações de cadastro, listagem, edição, remoção e salvamento.  
+- **`index.html`**: Interface gráfica do sistema.  
+- **`style.css`**: Arquivo de estilos para a interface.  
+- **`index.js`**: Lógica para interação com a interface gráfica.
 
 ## Pré-requisitos
 
 Para rodar o sistema localmente, você precisará de:
 
 - Compilador C (ex.: GCC);
-- Navegador para exibir a interface HTML
+- Node.js e npm;
+- Navegador para acessar a interface HTML.
 
 ## Instalação
 
@@ -86,24 +94,43 @@ Para rodar o sistema localmente, você precisará de:
 3. Compile o código C:
 
     ```bash
-    gcc -o inventory-manager main.c funcoe.c
+    gcc -o inventory-manager backend/program/main.c backend/program/funcoes.c
     ```
 
-4. Inicie o sistema:
+4. Inicie a API:
 
     ```bash
-    ./inventory-manager
+    cd backend
+    node api.js
     ```
 
-5. Abra o arquivo `index.html` em um navegador para acessar a interface gráfica.
-
+5. Abra o arquivo `index.html` no navegador para acessar a interface gráfica.
 
 ## Contribuição
 
 Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
 
-1. Faça um _fork_ do projeto
-2. Crie uma nova _branch_: `git checkout -b minha-nova-feature`
-3. Realize as alterações e faça _commit_: `git commit -m 'Adiciona nova funcionalidade'`
-4. Faça o _push_ da _branch_: `git push origin minha-nova-feature`
-5. Abra um _pull request_
+1. Faça um _fork_ do projeto.  
+2. Crie uma nova _branch_:  
+
+    ```bash
+    git checkout -b minha-nova-feature
+    ```
+
+3. Realize as alterações e faça o _commit_:  
+
+    ```bash
+    git commit -m 'Adiciona nova funcionalidade'
+    ```
+
+4. Faça o _push_ da _branch_:  
+
+    ```bash
+    git push origin minha-nova-feature
+    ```
+
+5. Abra um _pull request_.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
