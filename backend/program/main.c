@@ -1,61 +1,46 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "funcoes.h"
 
-// Função principal
-int main() {
-    Nodo *cabeca = NULL; // Inicializa a cabeça da lista como vazia
-    int opcao, id = 1;
-    Produto produto;
+void processarComando(char *comando, Nodo **cabeca) {
+    if (strcmp(comando, "list") == 0) {
+        listarProdutos(*cabeca);
+    } else if (strncmp(comando, "add ", 4) == 0) {
+        Produto produto;
+        sscanf(comando + 4, "%d %49s %f %d", &produto.id, produto.nome, &produto.preco, &produto.quantidade);
+        adicionarProduto(cabeca, produto);
+        printf("Produto adicionado: %d %s %.2f %d\n", produto.id, produto.nome, produto.preco, produto.quantidade);
+    } else if (strncmp(comando, "edit ", 5) == 0) {
+        int id;
+        sscanf(comando + 5, "%d", &id);
+        editarProduto(*cabeca, id);
+    } else if (strncmp(comando, "remove ", 7) == 0) {
+        int id;
+        sscanf(comando + 7, "%d", &id);
+        removerProduto(cabeca, id);
+    } else if (strcmp(comando, "save") == 0) {
+        salvarEmArquivoTxt(*cabeca, "produtos.txt");
+        printf("Produtos salvos no arquivo.\n");
+    } else if (strcmp(comando, "load") == 0) {
+        carregarDoArquivoTxt(cabeca, "produtos.txt");
+        printf("Produtos carregados do arquivo.\n");
+    } else {
+        printf("Comando inválido.\n");
+    }
+}
 
-    // Carrega os produtos do arquivo de texto ao iniciar o programa
+int main() {
+    Nodo *cabeca = NULL;
+    char comando[256];
+
     carregarDoArquivoTxt(&cabeca, "produtos.txt");
 
-    do {
-        printf("\n--- Sistema de Gerenciamento de Produtos ---\n");
-        printf("1. Cadastrar produto\n");
-        printf("2. Listar produtos\n");
-        printf("3. Editar produto\n");
-        printf("4. Remover produto\n");
-        printf("5. Salvar produtos em arquivo\n");
-        printf("0. Sair\n");
-        printf("Escolha uma opção: ");
-        scanf("%d", &opcao);
+    while (fgets(comando, sizeof(comando), stdin)) {
+        comando[strcspn(comando, "\n")] = '\0'; // Remove newline
+        processarComando(comando, &cabeca);
+    }
 
-        switch (opcao) {
-            case 1:
-                produto.id = id++;
-                printf("Digite o nome: ");
-                scanf(" %[^\n]s", produto.nome);
-                printf("Digite o preço: ");
-                scanf("%f", &produto.preco);
-                printf("Digite a quantidade: ");
-                scanf("%d", &produto.quantidade);
-                adicionarProduto(&cabeca, produto);
-                break;
-            case 2:
-                listarProdutos(cabeca);
-                break;
-            case 3:
-                printf("Digite o ID do produto a editar: ");
-                scanf("%d", &id);
-                editarProduto(cabeca, id);
-                break;
-            case 4:
-                printf("Digite o ID do produto a remover: ");
-                scanf("%d", &id);
-                removerProduto(&cabeca, id);
-                break;
-            case 5:
-                salvarEmArquivoTxt(cabeca, "produtos.txt");
-                break;
-            case 0:
-                salvarEmArquivoTxt(cabeca, "produtos.txt");
-                printf("Saindo...\n");
-                break;
-            default:
-                printf("Opção inválida!\n");
-        }
-    } while (opcao != 0);
-
+    salvarEmArquivoTxt(cabeca, "produtos.txt");
     return 0;
 }
