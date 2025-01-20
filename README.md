@@ -1,8 +1,6 @@
 # Inventory Manager
 
-Bem-vindo ao **Inventory Manager**!  
-
-Este repositório contém o código-fonte de um sistema de gerenciamento de estoque de produtos, desenvolvido em **C puro**. O projeto também utiliza uma API para interligar o executável em C a uma interface web.
+O Inventory Manager é um sistema de gerenciamento de estoque desenvolvido em C, projetado para permitir o controle eficiente de produtos, incluindo funcionalidades de cadastro, consulta, atualização e remoção.
 
 ## Objetivo
 
@@ -12,10 +10,6 @@ Este sistema foi desenvolvido como parte da avaliação da terceira unidade da d
 - Structs,
 - Ponteiros,
 - Alocação dinâmica e manipulação de arquivos em C.
-
-## Diferenciais do Projeto
-
-O **Inventory Manager** vai além dos requisitos básicos da disciplina ao incorporar tecnologias modernas, como **Node.js** e **HTML, CSS e JavaScript**, resultando em um sistema robusto que combina conceitos fundamentais de programação em C com ferramentas atuais para o desenvolvimento de soluções completas.
 
 ## Funcionalidades
 
@@ -39,8 +33,6 @@ O sistema oferece as seguintes funcionalidades:
 ## Tecnologias Utilizadas
 
 - **Backend**: Código em C para as operações principais.
-- **API**: Desenvolvida em Node.js para conectar o backend ao frontend.
-- **Frontend**: Interface desenvolvida com HTML, CSS e JavaScript.
 - **Banco de Dados**: Arquivos `.txt` gerenciados pelo código em C.
 
 ## Estrutura do Projeto
@@ -49,33 +41,11 @@ O sistema oferece as seguintes funcionalidades:
 inventory-manager/
 ├─── .vscode/
 ├─── backend/
-│    ├── api.js
-│    └── program/
-│         ├── funcoes.c
-│         ├── funcoes.h
-│         └── main.c
-└─── frontend/
-     ├── index.html
-     ├── style.css
-     └── index.js
+     └── program/
+          ├── funcoes.c
+          ├── funcoes.h
+          └── main.c
 ```
-
-### Descrição dos Arquivos
-
-- **`api.js`**: Conecta o executável em C ao Node.js, permitindo a interação com a interface web.  
-- **`main.c`**: Arquivo principal que inicializa o sistema.  
-- **`funcoes.c`** e **`funcoes.h`**: Biblioteca para operações de cadastro, listagem, edição, remoção e salvamento.  
-- **`index.html`**: Interface gráfica do sistema.  
-- **`style.css`**: Arquivo de estilos para a interface.  
-- **`index.js`**: Lógica para interação com a interface gráfica.
-
-## Pré-requisitos
-
-Para rodar o sistema localmente, você precisará de:
-
-- Compilador C (ex.: GCC);
-- Node.js e npm;
-- Navegador para acessar a interface HTML.
 
 ## Instalação
 
@@ -96,15 +66,6 @@ Para rodar o sistema localmente, você precisará de:
     ```bash
     gcc -o inventory-manager backend/program/main.c backend/program/funcoes.c
     ```
-
-4. Inicie a API:
-
-    ```bash
-    cd backend
-    node api.js
-    ```
-
-5. Abra o arquivo `index.html` no navegador para acessar a interface gráfica.
 
 ## Contribuição
 
