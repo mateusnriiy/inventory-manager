@@ -67,31 +67,6 @@ inventory-manager/
     gcc -o inventory-manager backend/program/main.c backend/program/funcoes.c
     ```
 
-## Contribuição
-
-Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
-
-1. Faça um _fork_ do projeto.  
-2. Crie uma nova _branch_:  
-
-    ```bash
-    git checkout -b minha-nova-feature
-    ```
-
-3. Realize as alterações e faça o _commit_:  
-
-    ```bash
-    git commit -m 'Adiciona nova funcionalidade'
-    ```
-
-4. Faça o _push_ da _branch_:  
-
-    ```bash
-    git push origin minha-nova-feature
-    ```
-
-5. Abra um _pull request_.
-
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
